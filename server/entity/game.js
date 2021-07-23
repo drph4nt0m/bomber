@@ -69,6 +69,9 @@ class Game {
     let spawnOnGrid = this.playerSpawns[index];
     this.playerSpawns.splice(index, 1);
 
+    if (!spawnOnGrid) {
+      this.removePlayer(this.players[this.players.length - 1].id);
+    }
     let spawn = { x: spawnOnGrid.col * TILE_SIZE, y: spawnOnGrid.row * TILE_SIZE };
     return [spawn, spawnOnGrid];
   }
