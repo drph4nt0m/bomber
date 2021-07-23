@@ -65,7 +65,7 @@ class Menu extends Phaser.State {
     }
 
     availableGames.forEach(game => {
-      game.name = `${game.name} [${Object.keys(availableGames[0].players).length}]`;
+      game.name = ` [${Object.keys(availableGames[0].players).length}] ${game.name}`;
     })
 
     this.slotsWithGame = new GameSlots({
