@@ -73,8 +73,9 @@ class PendingGame extends Phaser.State {
   displayGameInfo({ current_game }) {
     let players = Object.values(current_game.players);
 
-    this.gameTitle.text = current_game.name
+    this.gameTitle.text = `${current_game.name} [${players.length}]`
 
+    console.log(players);
     if (this.slotsWithPlayer) {
       this.slotsWithPlayer.destroy()
     }
