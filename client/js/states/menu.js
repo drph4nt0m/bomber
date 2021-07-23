@@ -64,6 +64,10 @@ class Menu extends Phaser.State {
       this.slotsWithGame.destroy()
     }
 
+    availableGames.forEach(game => {
+      game.name = `${game.name} [${Object.keys(availableGames[0].players).length}]`;
+    })
+
     this.slotsWithGame = new GameSlots({
       game: this.game,
       availableGames: availableGames,
